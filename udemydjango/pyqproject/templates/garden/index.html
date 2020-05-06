@@ -1,0 +1,48 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+<h2>{{ sub_title }}</h2>
+
+<img src="{% static 'garden/images/items1.png' %}" alt="野菜">
+<h3>美味しい採れたての野菜</h3>
+<ul>
+    {% for vegetable in vegetables %}
+    <li>
+        {{ vegetable.name }}:
+        {% if vegetable.sold_out %}
+            Sold Out
+        {% else %}
+            {{ vegetable.price }}円
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+<br>
+<!-- この下にformを追加 -->
+<form action="/" method="post">
+    {% csrf_token %}
+    <h3>感想をどうぞ</h3>
+    {{ form.as_p }}
+<input type="submit" value="送信">
+</form>
+<ul>
+    {% for co in comments %}
+    <li>
+        {{ co.name }}: {{ co.message }} ({{ co.created_at }})
+    </li>
+    {% endfor %}
+</ul>
+<!-- この下にいいね用formを追加 -->
+<h3>"いいね"ボタンを押下してください</h3>
+<form action="/good" method="post">{% csrf_token %}
+    <input type="submit" name="good" value="いいね">（{{ good_count }} いいね）
+</form>
+<p>欲しい方は電話してください。</p>
+<p>電話番号: 2222-XXXX</p>
+</body>
+</html>

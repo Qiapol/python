@@ -1,0 +1,6 @@
+name,maker,price,stock,release_date,url
+ハンドスピナー,PyQトイ,200円,"1,020個",2017-03-01,https://docs.pyq.jp/_static/assets/scraping/item-page5.html
+最新式冷蔵庫,PyQ家電,"32,000円",10個,2017-08-01,https://docs.pyq.jp/_static/assets/scraping/item-page1.html
+最新スマートフォン,PyQ家電,"21,000円",32個,2017-04-21,https://docs.pyq.jp/_static/assets/scraping/item-page4.html
+VRゴーグル,PyQトイ,"1,000円",無し,2017-05-30,https://docs.pyq.jp/_static/assets/scraping/item-page3.html
+ハイビジョンTV,PyQ家電,"72,000円",100個,2017-06-03,https://docs.pyq.jp/_static/assets/scraping/item-page2.html

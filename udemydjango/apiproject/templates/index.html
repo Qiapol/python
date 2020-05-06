@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}TOP{% endblock %}
+{% block main %}
+
+{# 新着情報 #}
+<h2>新着情報</h2>
+<div class="news">
+	{% if not news_list %}
+		<p>新着情報はありません</p>
+	{% else %}
+		<ul>
+		{% for news in news_list %}
+			<li><a href="{% url "news_detail" news.id %}">{{ news.day|date:"Y年m月d日" }} - {{ news.title }}</a></li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+</div>
+
+{# 商品一覧 #}
+<h2>商品一覧</h2>
+<div class="items">
+	{% if not item_list %}
+		<p>現在、商品はありません</p>
+	{% else %}
+		<ul>
+			{% for item in item_list %}
+			<li><a href="{% url "item_detail" item.id %}">{{ item.name }} - {{ item.price}}円</a></li>
+			{% endfor %}
+		<ul>
+	{% endif %}
+</div>
+
+{% endblock %}

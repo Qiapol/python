@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}商品情報 - {{ item.title }}{% endblock %}
+{% block main %}
+
+<h2>{{ item.name }}</h2>
+
+<div>
+	<dl>
+		<dt>商品価格</dt>
+		<dd>{{ item.price}}</dd>
+	</dl>
+	<dl>
+		<dt>商品説明</dt>
+		<dd>{{ item.description }}</dd>
+	</dl>
+</div>
+{% endblock %}

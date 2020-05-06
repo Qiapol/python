@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}新着情報 - {{ news.title }}{% endblock %}
+{% block main %}
+
+<h2>{{ news.day|date:"Y年m月d日" }} - {{ news.title }}</h2>
+<div>
+	{{ news.body|linebreaksbr }}
+</div>
+{% endblock %}
